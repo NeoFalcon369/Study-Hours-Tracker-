@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Hours Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Study Hours Tracker</h1>
+      <p>Log study sessions, view totals, and keep track of your progress.</p>
+    </header>
+
+    <section class="tracker-card">
+      <form id="session-form">
+        <div class="field-row">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Math, Science, History" required>
+        </div>
+        <div class="field-row">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="field-row">
+          <label for="hours">Hours</label>
+          <input type="number" id="hours" name="hours" min="0.1" step="0.1" placeholder="1.5" required>
+        </div>
+        <div class="field-row">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="2" placeholder="What you studied..."></textarea>
+        </div>
+        <button type="submit">Add Session</button>
+      </form>
+    </section>
+
+    <section class="summary-card">
+      <div class="summary-grid">
+        <div>
+          <h2>Total Hours</h2>
+          <p id="total-hours">0</p>
+        </div>
+        <div>
+          <h2>Sessions</h2>
+          <p id="session-count">0</p>
+        </div>
+        <div>
+          <h2>Average Hours</h2>
+          <p id="average-hours">0.0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="table-card">
+      <h2>Session History</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Hours</th>
+              <th>Notes</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="sessions-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
